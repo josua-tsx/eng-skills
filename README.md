@@ -4,15 +4,23 @@ House fork of selected [mattpocock/skills](https://github.com/mattpocock/skills)
 
 **Not** the full 51-skill pack. **Not** Superpowers.
 
-## Flow
+**How to use:** see **[USAGE.md](./USAGE.md)** (setup, which flow, step-by-step, cheat sheet).
 
-**Normal feature:** `/grill-with-docs` (or `/grill-me`) → `/to-spec` → optional `/to-tickets` + Cursor Plan → `/implement` (uses `/tdd`, then `/code-review`)
+## Quick start
+
+1. Install: `npx skills add josua-tsx/eng-skills -g` (and copy `commands/` → `~/.cursor/commands/` if needed)
+2. Disable Superpowers in Cursor Settings → Plugins
+3. In a project: `/setup-eng-skills` (once)
+4. Build a feature: `/grill-with-docs` → `/to-spec` → `/implement`
+5. Unsure: `/ask-eng`
+
+## Flows (summary)
+
+**Normal feature:** `/grill-with-docs` (or `/grill-me`) → `/to-spec` → optional `/to-tickets` + Cursor Plan → `/implement` (uses `tdd`, then `code-review`)
 
 **Foggy mega-work:** `/wayfinder` → when the map clears → `/to-spec` → build
 
-**Unsure?** `/ask-eng`
-
-**Per repo (once):** `/setup-eng-skills` — prefer local markdown tracker for solo
+**Tiny fixes:** skip the loop.
 
 ## Included skills
 
@@ -38,10 +46,9 @@ Or clone and copy into `~/.cursor/skills/`:
 
 ```bash
 git clone https://github.com/josua-tsx/eng-skills.git
-# then symlink or copy each skills/<name> into ~/.cursor/skills/
+# copy each skills/<name> into ~/.cursor/skills/
+# copy commands/*.md into ~/.cursor/commands/
 ```
-
-Slash commands: copy `commands/*.md` into `~/.cursor/commands/`.
 
 ## Upstream sync
 
