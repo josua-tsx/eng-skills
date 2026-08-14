@@ -1,0 +1,5 @@
+interface:
+  display_name: "Explain Work"
+  short_description: "Learn a shipped change well enough to explain it"
+policy:
+  allow_implicit_invocation: false
