@@ -28,6 +28,13 @@ The problem that the user is facing, from the user's perspective.
 
 The solution to the problem, from the user's perspective.
 
+## Visuals
+
+Mermaid of behaviour — the actors and states the user would recognise, ≤15 nodes each. Under each diagram: 2–3 plain-English bullets.
+
+1. **Happy-path sequence** — trigger → done. Draw it when two or more actors take part, or the path has a step someone could get wrong; otherwise write `none`.
+2. **State diagram** — statuses or phases this change introduces, each transition's cause, the important rejects. No statuses → write `none`.
+
 ## User Stories
 
 A LONG, numbered list of user stories. Each user story should be in the format of:
@@ -49,8 +56,9 @@ A list of implementation decisions that were made. This can include:
 - Technical clarifications from the developer
 - Architectural decisions
 - Schema changes
-- API contracts
 - Specific interactions
+
+If an API, RPC, or CLI entry point was actually decided, list it as its own bullet: method + path (or command) + one sentence on what it is for. Do not bury it inside another decision. If none were decided, omit them.
 
 Do NOT include specific file paths or code snippets. They may end up being outdated very quickly.
 
@@ -77,4 +85,6 @@ Any further notes about the feature.
 ## House adaptations
 
 - Spec stays the requirements artifact. **Cursor Plan** (product) may hold file-level how afterward — Plan is not a second Spec.
+- Decided APIs are scannable bullets under Implementation Decisions (not a required catalog; not invented to look complete).
+- Spec includes behavior mermaid (happy path + states). `explain-work` later draws what the diff actually landed.
 - Part of [josua-tsx/eng-skills](https://github.com/josua-tsx/eng-skills).
