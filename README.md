@@ -32,6 +32,7 @@ House fork of selected [mattpocock/skills](https://github.com/mattpocock/skills)
 | `wayfinder`, `research`, `prototype` | Decision maps for huge foggy work |
 | `diagnosing-bugs`, `codebase-design` | Debug / design vocabulary |
 | `writing-for-agents` | Author/edit skills & agent docs |
+| `explain-work` | Teach a shipped change from Spec + diff, then quiz |
 | `setup-eng-skills`, `ask-eng` | Setup + router |
 
 ## Install (you or others)

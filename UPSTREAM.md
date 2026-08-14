@@ -14,6 +14,10 @@
 - setup-eng-skills (from setup-matt-pocock-skills)
 - ask-eng (from ask-matt)
 
+## House-original (not from Matt)
+
+- explain-work — teach a shipped change from Spec + diff, then quiz until the user can explain it
+
 ## How you learn Matt shipped something
 
 1. Watch https://github.com/mattpocock/skills (Releases / activity)

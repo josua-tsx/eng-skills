@@ -45,6 +45,7 @@ You only need this before using `to-tickets`, `wayfinder`, or other tracker-awar
 | Huge, foggy effort — destination unclear | `/wayfinder` first |
 | Not sure which skill | `/ask-eng` |
 | Hard / flaky bug | `/diagnosing-bugs` (or ask the agent to use it) |
+| Shipped a change I don't fully understand yet | `/explain-work` |
 | Writing or editing a skill / AGENTS.md | Let `writing-for-agents` kick in, or ask for it |
 
 ---
@@ -99,6 +100,7 @@ when map is clear → /to-spec → /to-tickets → /implement
 | `/to-tickets` | Spec → tickets |
 | `/implement` | Build Spec/tickets with TDD + review |
 | `/wayfinder` | Decision map for foggy mega-work |
+| `/explain-work` | Teach a shipped change from Spec + diff, then quiz |
 
 Model-invoked (agent pulls them in; you rarely type them): `tdd`, `grilling`, `domain-modeling`, `code-review`, `diagnosing-bugs`, `codebase-design`, `research`, `prototype`, `writing-for-agents`.
 
