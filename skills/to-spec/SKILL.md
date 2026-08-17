@@ -16,14 +16,16 @@ The issue tracker and triage label vocabulary should have been provided to you �
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `ready-for-agent` triage label - no need for additional triage.
+3. Write the spec using the template below, then publish it. With an issue tracker configured, publish there and apply the `ready-for-agent` triage label - no need for additional triage. Without one, write it to `.scratch/<feature>/<spec-name>.md` alongside any existing `spec.md` for that feature, and carry the same value as a `status:` field in the frontmatter.
 
 4. Check your own draft before publishing:
 
 - Frontmatter present, with every repo the change touches listed in `repos`.
-- No `Status:` prose line — status lives on the triage label alone.
+- No `Status:` prose line — status lives on the triage label, or on the frontmatter `status:` field where there is no tracker.
 - `## Visuals` present with both numbered subheadings, `none` as the body where a diagram does not apply.
 - No line ends mid-phrase (see the line-break rule below).
+- No user story whose truth follows from another's, and none that a single test would satisfy alongside its neighbour.
+- Further Notes carries nothing already said above — read it against the earlier sections and delete every bullet whose point is already made there.
 - List, to yourself, the external facts the spec leans on — a third-party behaviour, a quota, a timing window, a capability you did not read in this repo. Each one either states how you know it or carries `ASSUMPTION:`. Any fact that has neither is the bug this check exists to catch.
 
 Where a sibling spec already exists in the same folder or tracker, this template wins. Do not mirror an older spec's formatting just because it is adjacent — earlier specs predate these rules.
@@ -41,6 +43,11 @@ This skill synthesises without interviewing, so gaps get filled by inference.
 Prefix any claim not established in the conversation or verified against code with `ASSUMPTION:`, and give anything you did verify a one-clause how-we-know ("read off the deploy config").
 A labelled inference can be checked in seconds; an unlabelled one gets laundered into a requirement.
 
+**Each fact belongs to exactly one section.**
+Problem Statement and Solution own the narrative, User Stories own the acceptance contract, Implementation Decisions own the how, Testing Decisions own the seams.
+Argue a point once, in the section that owns it, and let the other sections rely on it.
+A fact restated in three sections reads as three requirements and gets implemented as three.
+
 **One sentence per line.**
 Break at meaning, never at a column width: every line ends at a sentence boundary, or at a clause boundary marked by `;`, `—`, or a conjunction.
 Do NOT reflow prose to fit 80 or 100 characters — a 250-character sentence stays on one 250-character line, however ragged that looks in the editor.
@@ -53,6 +60,7 @@ Applies to Problem Statement, Solution, Implementation Decisions, Testing Decisi
 repos: [<every repo this spec governs>]
 base: origin/dev
 created: YYYY-MM-DD
+status: <ready-for-agent — only when there is no issue tracker to carry the triage label>
 ---
 
 ## Problem Statement
@@ -74,7 +82,7 @@ Always emit this heading and both numbered subheadings, even when neither diagra
 
 ## User Stories
 
-A LONG, numbered list of user stories. Each user story should be in the format of:
+A numbered list of user stories. Each user story should be in the format of:
 
 1. As an <actor>, I want a <feature>, so that <benefit>
 
@@ -82,7 +90,7 @@ A LONG, numbered list of user stories. Each user story should be in the format o
 1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
 </user-story-example>
 
-This list of user stories should be extremely extensive and cover all aspects of the feature.
+One story per behaviour a reviewer could accept or reject on its own. Collapse two stories into one when a single test would satisfy both, or when doing one makes the other true — in that second case keep the outcome as the story and let the ordered mechanism live in Implementation Decisions. Keep the actor who owns the behaviour rather than restating it under every actor who benefits. Cover every branch, including the rejects and the failure paths.
 
 ## Implementation Decisions
 
@@ -115,7 +123,7 @@ A description of the things that are out of scope for this spec.
 
 ## Further Notes
 
-Any further notes about the feature.
+Context that has no home in the sections above and would otherwise be lost: alternatives considered and why they were rejected, sequencing between workstreams, constraints discovered along the way, lessons worth carrying. Every bullet here is a fact that appears nowhere else in the spec.
 
 </spec-template>
 
@@ -127,4 +135,6 @@ Any further notes about the feature.
 - YAML frontmatter (`repos`, `base`, `created`) instead of a prose status line, matching the shape `explain-work` uses.
 - Inferred facts carry `ASSUMPTION:`, verified ones a how-we-know clause — the skill never interviews, so the reader needs to know which claims were checked.
 - Semantic line breaks, so the spec stays hand-editable while it is being cleared. A step-4 self-check gates all of the above.
+- User stories are bounded by behaviour coverage, and each fact is argued in exactly one section. Upstream asks for a LONG, extremely extensive list, which buys near-duplicate stories wearing different actor hats and the same point restated across three sections.
+- Publishing has a no-tracker fallback (`.scratch/<feature>/`, `status:` in frontmatter), since not every repo here has a tracker wired up.
 - Part of [josua-tsx/eng-skills](https://github.com/josua-tsx/eng-skills).
