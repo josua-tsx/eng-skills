@@ -18,28 +18,34 @@ Check with the user that these seams match their expectations.
 
 3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `ready-for-agent` triage label - no need for additional triage.
 
+4. Check your own draft before publishing:
+
+- Frontmatter present, with every repo the change touches listed in `repos`.
+- No `Status:` prose line — status lives on the triage label alone.
+- `## Visuals` present with both numbered subheadings, `none` as the body where a diagram does not apply.
+- No line ends mid-phrase (see the line-break rule below).
+- List, to yourself, the external facts the spec leans on — a third-party behaviour, a quota, a timing window, a capability you did not read in this repo. Each one either states how you know it or carries `ASSUMPTION:`. Any fact that has neither is the bug this check exists to catch.
+
+Where a sibling spec already exists in the same folder or tracker, this template wins. Do not mirror an older spec's formatting just because it is adjacent — earlier specs predate these rules.
+
 ## Writing rules
 
 These apply to every section of the template.
 
 **Frontmatter is required.**
-`repos` is the load-bearing field: an agent picking the spec up inside a second repo has no other way to tell the spec applies there, so list every repo the change touches, not just the one you are sitting in.
-`base` is the branch the spec was written against.
-There is deliberately no `status` field — the `ready-for-agent` triage label from step 3 already records that, and a second copy is just a second thing to fall out of date.
-On a GitHub or GitLab tracker the block renders as two horizontal rules with text between them; emit it anyway, since agents read it far more often than humans look at it.
+List every repo the change touches in `repos`, not just the one you are sitting in — an agent opening the spec in a sibling repo has no other way to tell it applies there.
+It renders as two horizontal rules on a GitHub or GitLab tracker; emit it anyway, since agents read it far more often than humans look at it.
 
 **Mark what you inferred.**
-This skill synthesises without interviewing, so every gap gets filled by inference.
-Prefix any claim that was not established in the conversation or verified against code with `ASSUMPTION:`.
-Where you did verify an external fact, attach a one-clause how-we-know to it, e.g. "confirmed against the provider's docs" or "read off the deploy config".
-An inference that is labelled can be checked in seconds; an unlabelled one gets laundered into a requirement.
+This skill synthesises without interviewing, so gaps get filled by inference.
+Prefix any claim not established in the conversation or verified against code with `ASSUMPTION:`, and give anything you did verify a one-clause how-we-know ("read off the deploy config").
+A labelled inference can be checked in seconds; an unlabelled one gets laundered into a requirement.
 
 **One sentence per line.**
-Use semantic line breaks: one sentence, or one clause of a long sentence, on its own line.
-A one-word change then shows up as a one-line diff instead of repainting the whole paragraph.
-That matters because this spec gets cleared by hand before `/to-tickets` runs, and neither author nor reviewer can see what moved inside a paragraph-sized diff.
+Break at meaning, never at a column width: every line ends at a sentence boundary, or at a clause boundary marked by `;`, `—`, or a conjunction.
+Do NOT reflow prose to fit 80 or 100 characters — a 250-character sentence stays on one 250-character line, however ragged that looks in the editor.
+This keeps a one-word edit to a one-line diff while the spec is being cleared by hand; hard wrapping gives you the wide diff anyway and reads worse than a plain paragraph.
 Applies to Problem Statement, Solution, Implementation Decisions, Testing Decisions, Out of Scope, and Further Notes.
-In a `.md` file the paragraph renders as one block, but GitHub and GitLab turn single newlines into real line breaks inside issue bodies, so on those trackers expect the published spec to render as a stack of one-sentence lines. That is readable, and the editability is worth more than the uniform paragraph.
 
 <spec-template>
 
@@ -64,9 +70,7 @@ Mermaid of behaviour — the actors and states the user would recognise, ≤15 n
 Always emit this heading and both numbered subheadings, even when neither diagram applies — put the literal word `none` as the body. A skipped section is invisible; a section containing `none` is a decision someone can disagree with.
 
 1. **Happy-path sequence** — trigger → done. Draw it when two or more actors take part, or the path has a step someone could get wrong; otherwise write `none`.
-2. **State diagram** — statuses or phases this change introduces, each transition's cause, the important rejects. No statuses → write `none`.
-
-Draw every legal transition, including retries and returns to an earlier state. Prose can list statuses and silently omit an edge; a diagram forces the omission into view.
+2. **State diagram** — statuses or phases this change introduces, each transition's cause, the important rejects. Draw every legal transition, including retries and returns to an earlier state, since prose can list statuses while silently omitting an edge. No statuses → write `none`.
 
 ## User Stories
 
@@ -119,8 +123,8 @@ Any further notes about the feature.
 
 - Spec stays the requirements artifact. **Cursor Plan** (product) may hold file-level how afterward — Plan is not a second Spec.
 - Decided APIs are scannable bullets under Implementation Decisions (not a required catalog; not invented to look complete).
-- Spec includes behavior mermaid (happy path + states). `explain-work` later draws what the diff actually landed. The `## Visuals` heading is always emitted, `none` and all, so a skipped diagram is a visible choice rather than a silent gap.
-- YAML frontmatter (`repos`, `base`, `created`) instead of a prose status line, matching the shape `explain-work` uses. `repos` is the field that earns its keep — it tells an agent in a sibling repo that the spec governs it too. Status stays on the triage label alone.
-- Inferred facts carry an `ASSUMPTION:` prefix, verified ones carry a how-we-know clause — the skill never interviews, so the reader needs to know which claims were checked.
-- Semantic line breaks throughout, because the spec is edited by hand before `/to-tickets` and paragraph-wide diffs hide what changed.
+- Spec includes behavior mermaid (happy path + states), always emitted even when `none`. `explain-work` later draws what the diff actually landed.
+- YAML frontmatter (`repos`, `base`, `created`) instead of a prose status line, matching the shape `explain-work` uses.
+- Inferred facts carry `ASSUMPTION:`, verified ones a how-we-know clause — the skill never interviews, so the reader needs to know which claims were checked.
+- Semantic line breaks, so the spec stays hand-editable while it is being cleared. A step-4 self-check gates all of the above.
 - Part of [josua-tsx/eng-skills](https://github.com/josua-tsx/eng-skills).
