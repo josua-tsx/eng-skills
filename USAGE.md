@@ -46,6 +46,7 @@ You only need this before using `to-tickets`, `wayfinder`, or other tracker-awar
 | Not sure which skill | `/ask-eng` |
 | Hard / flaky bug | `/diagnosing-bugs` (or ask the agent to use it) |
 | Shipped a change I don't fully understand yet | `/explain-work` |
+| Junior DevOps practice (roadmap + small lab app) | `/learn-devops` |
 | Writing or editing a skill / AGENTS.md | Let `writing-for-agents` kick in, or ask for it |
 
 ---
@@ -101,6 +102,7 @@ when map is clear → /to-spec → /to-tickets → /implement
 | `/implement` | Build Spec/tickets with TDD + review |
 | `/wayfinder` | Decision map for foggy mega-work |
 | `/explain-work` | Teach a shipped change from Spec + diff, then quiz |
+| `/learn-devops` | Coach a junior DevOps session from the learning vault |
 
 Model-invoked (agent pulls them in; you rarely type them): `tdd`, `grilling`, `domain-modeling`, `code-review`, `diagnosing-bugs`, `codebase-design`, `research`, `prototype`, `writing-for-agents`.
 

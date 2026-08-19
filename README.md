@@ -13,6 +13,7 @@ House fork of selected [mattpocock/skills](https://github.com/mattpocock/skills)
 3. In a project: `/setup-eng-skills` (once)
 4. Build a feature: `/grill-with-docs` → `/to-spec` → `/implement`
 5. Unsure: `/ask-eng`
+6. Junior DevOps practice: `/learn-devops` (user-invoked; not for dockerizing a real product)
 
 ## Flows (summary)
 
@@ -33,6 +34,7 @@ House fork of selected [mattpocock/skills](https://github.com/mattpocock/skills)
 | `diagnosing-bugs`, `codebase-design` | Debug / design vocabulary |
 | `writing-for-agents` | Author/edit skills & agent docs |
 | `explain-work` | Teach a shipped change from Spec + diff, then quiz |
+| `learn-devops` | Coach a junior DevOps learning session (vault + small lab app) |
 | `setup-eng-skills`, `ask-eng` | Setup + router |
 
 ## Install (you or others)
