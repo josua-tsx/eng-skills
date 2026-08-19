@@ -1,0 +1,5 @@
+interface:
+  display_name: "Learn DevOps"
+  short_description: "Coach a junior DevOps learning session"
+policy:
+  allow_implicit_invocation: false
