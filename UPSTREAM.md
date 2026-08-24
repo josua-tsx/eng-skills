@@ -17,6 +17,8 @@
 ## House-original (not from Matt)
 
 - explain-work — teach a shipped change from Spec + diff, then quiz until the user can explain it
+- learn-devops — coach a junior DevOps learning session from a vault and one lab app
+- learn-go — coach Go engineering literacy from a standalone vault and the CRM lab
 
 ## How you learn Matt shipped something
 
