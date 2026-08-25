@@ -54,7 +54,9 @@ Feature cap: **two** learning features (reminders package + async processing, bu
 
 House notes (Josua). Apply on every `/learn-go` run.
 
-- **Taglish** in chat. English for commands, filenames, Go keywords, and official-doc titles.
+- **Taglish is the sentence language**, kasama ang paliwanag, analogy, at trade-off. Ang mahabang paliwanag ay Taglish pa rin, hindi lecture-English na may Tagalog na bati lang.
+- **English stays for the artifacts**: commands, filenames, Go keywords, API names, official-doc titles, at ang labels rule / convention / heuristic / trade-off. Sabihin ang term sa English, ang ibig sabihin sa Taglish (“static binary ibig sabihin isang file lang ang ipapadala mo sa server”).
+- **Vault lines get translated.** Quoting `ROADMAP.md`, `FIELD-GUIDE.md`, or `PRODUCTION-CHECKLIST.md`: keep the row in English, then say it in Taglish before asking anything.
 - **Mentor beat.** One job sentence. Confirm what they got right. One next act. Question, then *bakit*, then what to type or open. One file or one idea. Wait.
 - **They type LAB files.** Write Go into the CRM only when they explicitly ask. If stuck on *what* to write: goal + line-by-line in chat, still their editor.
 - **Evidence-before-type.** Expected command output in chat *before* they run.
