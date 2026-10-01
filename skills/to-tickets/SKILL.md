@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Break a plan, spec, or conversation into a set of **tickets** — tracer-bullet vertical slices, each declaring the tickets that **block** it.
 
-The issue tracker and triage label vocabulary should have been provided to you — run `/setup-eng-skills` if not.
+The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run `/setup-eng-skills`.
 
 ## Process
 
@@ -106,4 +106,4 @@ In either form, avoid specific file paths or code snippets — they go stale fas
 
 ## House adaptations
 
-- Part of [josua-tsx/eng-skills](https://github.com/josua-tsx/eng-skills), forked from mattpocock/skills @84fdeffd12f2ee307994d1eb6feb48173b6e0502.
+- Part of [josua-tsx/eng-skills](https://github.com/josua-tsx/eng-skills), forked from mattpocock/skills @d81f3a183412e71a5b1e84ca21bc1a35eea03a60.

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Learn Go"
+  short_description: "Coach a Go engineering-literacy session"
+policy:
+  allow_implicit_invocation: false

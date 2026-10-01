@@ -40,12 +40,18 @@ You only need this before using `to-tickets`, `wayfinder`, or other tracker-awar
 | --- | --- |
 | Small bugfix / tiny change | Just do it — skip the loop |
 | Feature or behavior change you can hold in one session | `/grill-with-docs` → `/to-spec` → `/implement` |
-| Same, but multi-PR / multi-session build | Add `/to-tickets` after `/to-spec` |
+| Same, but several tickets in one PR | Add `/to-tickets` after `/to-spec`, then `/implement-spec` |
+| Same, but multi-PR / one ticket per session | Add `/to-tickets` after `/to-spec`, then `/implement` per ticket |
+| Opening a pull request | `/pr` (also model-invoked when the agent writes a PR) |
+| After a build, especially a messy one | `/retro` |
 | No git repo / no working directory | `/grill-me` (stateless) instead of `/grill-with-docs` |
 | Huge, foggy effort — destination unclear | `/wayfinder` first |
 | Not sure which skill | `/ask-eng` |
 | Hard / flaky bug | `/diagnosing-bugs` (or ask the agent to use it) |
 | Shipped a change I don't fully understand yet | `/explain-work` |
+| Go engineering literacy (structure, runtime, production practices) | `/learn-go` |
+| Junior DevOps practice (roadmap + small lab app) | `/learn-devops` |
+| Production system-design judgment (requirements, scale, failure, trade-offs) | `/learn-system-design` |
 | Writing or editing a skill / AGENTS.md | Let `writing-for-agents` kick in, or ask for it |
 
 ---
@@ -53,11 +59,14 @@ You only need this before using `to-tickets`, `wayfinder`, or other tracker-awar
 ## Normal feature (main path)
 
 ```text
-/grill-with-docs   → sharpen the idea (writes CONTEXT.md / ADRs when useful)
+/grill-with-docs   → sharpen the idea (writes GLOSSARY.md / ADRs when useful)
 /to-spec           → turn the thread into a Spec
 (/to-tickets)      → optional: split into tracer-bullet tickets
 Cursor Plan        → optional: file-level how (not a second Spec)
-/implement         → build with TDD, then code-review, then commit
+/implement         → one ticket or one session: TDD, then code-review, then commit
+/implement-spec    → optional: whole ticket graph on one integration branch
+/pr                → when the work goes up as a pull request
+/retro             → after the session, improve the agent environment
 ```
 
 ### Step notes
@@ -67,6 +76,9 @@ Cursor Plan        → optional: file-level how (not a second Spec)
 3. **`/to-tickets`** — Use when the Spec is too big for one implement session. Work tickets blockers-first.
 4. **Cursor Plan** — After Spec exists, you may open Plan mode for file-level sequencing. Do **not** rewrite the Spec inside Plan.
 5. **`/implement`** — Drives **`tdd`** at seams, runs tests, runs **`code-review`**, commits. House rule: do not claim done without test evidence.
+6. **`/implement-spec`** — When you'd rather orchestrate the whole Spec than drive each ticket: parallel implementers on the ready frontier, one integration branch, one `code-review` at the end.
+7. **`/pr`** — Smallest visual of the change, before/after evidence, one-way vs two-way door.
+8. **`/retro`** — Suggests environment changes (nav pointers, lint/CI, coding standards), not product-code rewrites.
 
 **Tiny fixes:** skip grilling/spec; implement directly.
 
@@ -95,14 +107,20 @@ when map is clear → /to-spec → /to-tickets → /implement
 | `/ask-eng` | Router — which flow fits |
 | `/setup-eng-skills` | One-time repo config (tracker, domain docs) |
 | `/grill-me` | Stateless interview (no repo paper trail) |
-| `/grill-with-docs` | Interview + CONTEXT.md / ADRs in the repo |
+| `/grill-with-docs` | Interview + GLOSSARY.md / ADRs in the repo |
 | `/to-spec` | Thread → Spec |
 | `/to-tickets` | Spec → tickets |
 | `/implement` | Build Spec/tickets with TDD + review |
+| `/implement-spec` | Whole Spec on one integration branch, parallel tickets |
+| `/pr` | PR body for fast human review |
+| `/retro` | Session retro: improve the agent environment |
 | `/wayfinder` | Decision map for foggy mega-work |
 | `/explain-work` | Teach a shipped change from Spec + diff, then quiz |
+| `/learn-go` | Coach a Go engineering-literacy session from the standalone vault |
+| `/learn-devops` | Coach a junior DevOps session from the learning vault |
+| `/learn-system-design` | Coach a mastery-gated production system-design session |
 
-Model-invoked (agent pulls them in; you rarely type them): `tdd`, `grilling`, `domain-modeling`, `code-review`, `diagnosing-bugs`, `codebase-design`, `research`, `prototype`, `writing-for-agents`.
+Model-invoked (agent pulls them in; you rarely type them): `tdd`, `grilling`, `domain-modeling`, `code-review`, `diagnosing-bugs`, `codebase-design`, `research`, `prototype`, `writing-for-agents`, `pr`.
 
 ---
 

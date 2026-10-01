@@ -1,0 +1,5 @@
+interface:
+  display_name: "Learn System Design"
+  short_description: "Coach a production system-design session"
+policy:
+  allow_implicit_invocation: false

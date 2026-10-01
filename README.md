@@ -11,12 +11,15 @@ House fork of selected [mattpocock/skills](https://github.com/mattpocock/skills)
 1. Install: `npx skills add josua-tsx/eng-skills -g` (and copy `commands/` → `~/.cursor/commands/` if needed)
 2. Disable Superpowers in Cursor Settings → Plugins
 3. In a project: `/setup-eng-skills` (once)
-4. Build a feature: `/grill-with-docs` → `/to-spec` → `/implement`
+4. Build a feature: `/grill-with-docs` → `/to-spec` → `/implement` (or `/implement-spec` for a whole ticket graph)
 5. Unsure: `/ask-eng`
+6. Go engineering literacy: `/learn-go` (user-invoked; vault + CRM lab)
+7. Junior DevOps practice: `/learn-devops` (user-invoked; not for dockerizing a real product)
+8. Production system-design judgment: `/learn-system-design` (user-invoked; standalone mastery-gated vault)
 
 ## Flows (summary)
 
-**Normal feature:** `/grill-with-docs` (or `/grill-me`) → `/to-spec` → optional `/to-tickets` + Cursor Plan → `/implement` (uses `tdd`, then `code-review`)
+**Normal feature:** `/grill-with-docs` (or `/grill-me`) → `/to-spec` → optional `/to-tickets` + Cursor Plan → `/implement` (uses `tdd`, then `code-review`). Multi-ticket in one run: `/implement-spec`. Close with `/pr` when opening a pull request, `/retro` after a session.
 
 **Foggy mega-work:** `/wayfinder` → when the map clears → `/to-spec` → build
 
@@ -28,11 +31,16 @@ House fork of selected [mattpocock/skills](https://github.com/mattpocock/skills)
 | --- | --- |
 | `grill-me`, `grill-with-docs`, `grilling`, `domain-modeling` | Sharpen ideas |
 | `to-spec`, `to-tickets` | Spec + tickets |
-| `implement`, `tdd`, `code-review` | Build with TDD + review |
+| `implement`, `implement-spec`, `tdd`, `code-review` | Build with TDD + review |
+| `pr` | PR body: smallest visual, before/after evidence, merge danger |
+| `retro` | After a session, improve the agent environment |
 | `wayfinder`, `research`, `prototype` | Decision maps for huge foggy work |
 | `diagnosing-bugs`, `codebase-design` | Debug / design vocabulary |
 | `writing-for-agents` | Author/edit skills & agent docs |
 | `explain-work` | Teach a shipped change from Spec + diff, then quiz |
+| `learn-go` | Coach a Go engineering-literacy session (standalone vault + CRM lab) |
+| `learn-devops` | Coach a junior DevOps learning session (vault + small lab app) |
+| `learn-system-design` | Coach a production system-design apprenticeship (standalone mastery-gated vault) |
 | `setup-eng-skills`, `ask-eng` | Setup + router |
 
 ## Install (you or others)
