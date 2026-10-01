@@ -1,16 +1,17 @@
 # Upstream pin
 
 **Source:** https://github.com/mattpocock/skills  
-**Pinned commit:** `84fdeffd12f2ee307994d1eb6feb48173b6e0502`  
-**Pinned date:** 2026-08-12 (UTC)  
-**Last checked:** 2026-08-12
+**Pinned commit:** `d81f3a183412e71a5b1e84ca21bc1a35eea03a60`  
+**Pinned date:** 2026-09-29 (UTC)  
+**Last checked:** 2026-10-01
 
 ## Forked skill names
 
 - grill-me, grill-with-docs, grilling, domain-modeling
-- to-spec, to-tickets, implement, wayfinder
+- to-spec, to-tickets, implement, implement-spec, wayfinder
 - tdd, diagnosing-bugs, code-review, codebase-design
 - research, prototype, writing-for-agents
+- pr, retro
 - setup-eng-skills (from setup-matt-pocock-skills)
 - ask-eng (from ask-matt)
 
@@ -19,6 +20,7 @@
 - explain-work — teach a shipped change from Spec + diff, then quiz until the user can explain it
 - learn-devops — coach a junior DevOps learning session from a vault and one lab app
 - learn-go — coach Go engineering literacy from a standalone vault and the CRM lab
+- learn-system-design — coach production system-design judgment from a standalone mastery-gated vault
 
 ## How you learn Matt shipped something
 
